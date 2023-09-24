@@ -21,5 +21,19 @@ public class Machine {
     private String name;
     private int count;
 
+    public void addGymMachine(GymMachine gymMachine){
+        this.gymList.add(gymMachine);
+    }
 
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
 }

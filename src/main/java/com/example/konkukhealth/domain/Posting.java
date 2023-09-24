@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Getter
@@ -26,5 +27,8 @@ public class Posting {
     //commit
 
     private LocalDateTime localDateTime;
+
+    @OneToMany
+    public List<Routine>routineList;
 
 }

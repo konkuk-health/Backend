@@ -20,5 +20,8 @@ public class Routine {
     public int sets;
     public int count;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="posting_id")
+    public Posting posting;
 
 }

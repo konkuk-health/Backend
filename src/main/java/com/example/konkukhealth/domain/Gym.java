@@ -15,6 +15,8 @@ public class Gym {
     @Column(name = "gym_id")
     private Long id;
 
+    private String name;
+
     @OneToMany(mappedBy = "gym")
     private List<GymMachine> gymList=new ArrayList<>();
 
@@ -28,4 +30,45 @@ public class Gym {
 
     private Long yearFee;
 
+
+
+    public Gym(){
+
+    }
+
+    public Gym(String name, Long oneFee,
+               Long oneMonthFee, Long threeMonthFee, Long sixMonthFee, Long yearFee) {
+
+        this.name = name;
+        this.oneFee = oneFee;
+        this.oneMonthFee = oneMonthFee;
+        this.threeMonthFee = threeMonthFee;
+        this.sixMonthFee = sixMonthFee;
+        this.yearFee = yearFee;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void addGymMachine(GymMachine gymMachine){
+        this.gymList.add(gymMachine);
+    }
+    public void setOneFee(Long oneFee) {
+        this.oneFee = oneFee;
+    }
+
+    public void setOneMonthFee(Long oneMonthFee) {
+        this.oneMonthFee = oneMonthFee;
+    }
+
+    public void setThreeMonthFee(Long threeMonthFee) {
+        this.threeMonthFee = threeMonthFee;
+    }
+
+    public void setSixMonthFee(Long sixMonthFee) {
+        this.sixMonthFee = sixMonthFee;
+    }
+
+    public void setYearFee(Long yearFee) {
+        this.yearFee = yearFee;
+    }
 }

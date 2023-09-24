@@ -21,4 +21,11 @@ public class GymMachine {
     @JoinColumn(name="machine_id")
     private Machine machine;
 
+    public GymMachine(){
+
+    }
+    public GymMachine(Gym gym, Machine machine) {
+        this.gym = gym;
+        this.machine = machine;
+    }
 }
