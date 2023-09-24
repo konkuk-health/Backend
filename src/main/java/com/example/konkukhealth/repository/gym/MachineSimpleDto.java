@@ -1,5 +1,10 @@
 package com.example.konkukhealth.repository.gym;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class MachineSimpleDto {
 
     private Long id;

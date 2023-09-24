@@ -15,7 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MachineRepository {
 
-    private EntityManager em;
+    private final EntityManager em;
 
     public void save(Machine machine){
         em.persist(machine);
@@ -29,11 +29,13 @@ public class MachineRepository {
                 "from Machine m "+
                 "left join m.gymList gymlist "+
                 "left join gymlist.machine machine "+
-                "where machine.id= "+ gym.getId(), MachineSimpleDto.class).getResultList();
+                "where machine.id= :gymId", MachineSimpleDto.class)
+                .setParameter("gymId",gym.getId()).getResultList();
 
     }
     public void addMachine(Gym gym,Machine machine){
         GymMachine gymMachine=new GymMachine(gym,machine);
+        em.persist(gymMachine);
         gym.addGymMachine(gymMachine);
         machine.addGymMachine(gymMachine);
     }

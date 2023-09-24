@@ -36,4 +36,13 @@ public class Machine {
     public void setCount(int count) {
         this.count = count;
     }
+    public Machine(){
+
+    }
+
+    public Machine(String company, String name, int count) {
+        this.company = company;
+        this.name = name;
+        this.count = count;
+    }
 }
