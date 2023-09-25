@@ -7,8 +7,8 @@ spring:
 
   jpa:
     open-in-view: true
-    #hibernate:
-      #ddl-auto: create
+    hibernate:
+      ddl-auto: create
     properties:
       hibernate:
         show_sql: true
