@@ -13,7 +13,7 @@ import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
-public class MachineRepository {
+public class MachineRepository implements MachineRepositoryImpl{
 
     private final EntityManager em;
 
@@ -28,8 +28,8 @@ public class MachineRepository {
         return em.createQuery("select new com.example.konkukhealth.repository.gym.MachineSimpleDto(m.id,m.company,m.name,m.count) "+
                 "from Machine m "+
                 "left join m.gymList gymlist "+
-                "left join gymlist.machine machine "+
-                "where machine.id= :gymId", MachineSimpleDto.class)
+                "left join gymlist.gym gym "+
+                "where gym.id= :gymId", MachineSimpleDto.class)
                 .setParameter("gymId",gym.getId()).getResultList();
 
     }

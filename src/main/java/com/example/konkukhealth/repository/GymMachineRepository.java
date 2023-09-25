@@ -9,9 +9,10 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 @RequiredArgsConstructor
-public class GymMachineRepository {
+public class GymMachineRepository implements GymMachineRepositoryImpl{
 
-    private EntityManager em;
+    private final EntityManager em;
+
 
     public void save(GymMachine gymMachine){
         em.persist(gymMachine);

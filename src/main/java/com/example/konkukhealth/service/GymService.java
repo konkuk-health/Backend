@@ -36,7 +36,7 @@ public class GymService {
         gym1.setSixMonthFee(gym.getSixMonthFee());
         gym1.setYearFee(gym.getYearFee());
     }
-
+    @Transactional(readOnly = false)
     public void changeGym(Gym gym, Long id){
         Gym gym1 = gymRepository.findOneById(id);
         gym1.setName(gym.getName());

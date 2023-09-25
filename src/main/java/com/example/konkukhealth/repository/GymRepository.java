@@ -13,8 +13,8 @@ import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
-public class GymRepository {
-    public final EntityManager em;
+public class GymRepository implements GymRepositoryImpl{
+    private final EntityManager em;
 
     public void save(Gym gym){
         em.persist(gym);
